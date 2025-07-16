@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accessible News Reader</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <a href="#news" class="skip-link">Skip to main content</a>
+
+  <header role="banner">
+    <h1 tabindex="0">Accessible News Reader</h1>
+
+    <div class="topic-search">
+      <input type="text" id="topicInput" placeholder="Enter topic (e.g., sports, tech)">
+      <button onclick="getNewsByTopic()">Get News</button>
+    </div>
+
+    <div class="controls">
+      <button onclick="toggleContrast()">High Contrast</button>
+      <button onclick="increaseFont()">A+</button>
+      <button onclick="decreaseFont()">A-</button>
+      <button onclick="toggleMarkMode()">Mark Mode</button>
+    </div>
+  </header>
+
+  <main id="news" role="main" aria-live="polite">
+    Loading news...
+  </main>
+
+  <section id="notes-section">
+    <h2>Your Notes</h2>
+    <ul id="notes-list"></ul>
+  </section>
+
+  <footer role="contentinfo">
+    © 2025 Accessible News Reader
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
