@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 NEWS_API_KEY = " you key "
-
+ 
 @app.route('/')
 def index():
     return render_template('index.html')
